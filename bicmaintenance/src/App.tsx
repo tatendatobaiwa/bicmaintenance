@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+
 
 interface ApiResponse {
   message: string;
@@ -34,6 +36,7 @@ const App: React.FC = () => {
       <Header />
       <h1>React + Vite + Express</h1>
       <p>Message from backend: {message}</p>
+      <Footer />
     </div>
   );
 };

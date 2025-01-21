@@ -1,7 +1,10 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+    --font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', sans-serif;
+    --primary-color: #707070;
+    --secondary-color: #666;
+    --hover-color: #007aff;
+    --background-color: #000;
+    --border-color: #000000;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);

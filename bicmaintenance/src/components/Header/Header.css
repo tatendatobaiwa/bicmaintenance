@@ -1,14 +1,4 @@
-/* Header.css */
-:root {
-    --font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', sans-serif;
-    --primary-color: #707070;
-    --secondary-color: #666;
-    --hover-color: #007aff;
-    --background-color: #000;
-    --border-color: #000000;
-  }
-  
-  .header {
+ .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
