@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, Linkedin, Github } from 'lucide-react';
 import './Footer.css';
 
@@ -14,10 +15,19 @@ const Footer: React.FC = () => {
         <div className="footer-section">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/chats">Chats</a></li>
-            <li><a href="/reports">Reports</a></li>
-            <li><a href="/profile">Profile</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/chats">Chats</Link></li>
+            <li><Link to="/reports">Reports</Link></li>
+            <li><Link to="/profile">Profile</Link></li>
+          </ul>
+        </div>
+
+        <div className="footer-section">
+          <h3>Legal</h3>
+          <ul>
+            <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+            <li><Link to="/terms-of-use">Terms of Use</Link></li>
+            <li><Link to="/about-us">About Us</Link></li>
           </ul>
         </div>
 

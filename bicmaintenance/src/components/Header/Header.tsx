@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Home, MessageCircle, FileText, User, Menu, ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 const Header: React.FC = () => {
@@ -24,64 +25,58 @@ const Header: React.FC = () => {
       <div className="logo">
         <img src="/src/assets/logos/maintainme.png" alt="Logo" />
       </div>
-
       <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
         <ul className="nav-list">
           <li className="nav-item">
-            <a href="/" className="nav-link">
+            <Link to="/" className="nav-link" onClick={closeReports}>
               <Home className="nav-icon" />
               <span>Home</span>
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a href="/chats" className="nav-link">
+            <Link to="/chats" className="nav-link" onClick={closeReports}>
               <MessageCircle className="nav-icon" />
               <span>Chats</span>
-            </a>
+            </Link>
           </li>
           <li
             className="nav-item dropdown"
-            onMouseEnter={() => setIsReportsOpen(true)} // Show on hover (desktop)
-            onMouseLeave={() => setIsReportsOpen(false)} // Hide on hover out (desktop)
+            onMouseEnter={() => setIsReportsOpen(true)}
+            onMouseLeave={() => setIsReportsOpen(false)}
           >
-            <a
-              href="/reports"
-              className="nav-link"
-              onClick={toggleReports} // Toggle on click (mobile)
-            >
+            <div className="nav-link" onClick={toggleReports}>
               <FileText className="nav-icon" />
               <span>Reports</span>
               <ChevronDown className="dropdown-icon" />
-            </a>
+            </div>
             {isReportsOpen && (
               <ul className="dropdown-menu">
                 <li>
-                  <a href="/reports/open" onClick={closeReports}>
+                  <Link to="/reports/open" onClick={closeReports}>
                     Open
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/reports/closed" onClick={closeReports}>
+                  <Link to="/reports/closed" onClick={closeReports}>
                     Closed
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/reports/in-progress" onClick={closeReports}>
+                  <Link to="/reports/in-progress" onClick={closeReports}>
                     In Progress
-                  </a>
+                  </Link>
                 </li>
               </ul>
             )}
           </li>
           <li className="nav-item">
-            <a href="/profile" className="nav-link">
+            <Link to="/profile" className="nav-link" onClick={closeReports}>
               <User className="nav-icon" />
               <span>Profile</span>
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
-
       <div className="burger" onClick={toggleMenu}>
         <Menu className="burger-icon" />
       </div>
