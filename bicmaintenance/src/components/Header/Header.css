@@ -1,0 +1,140 @@
+/* Header.css */
+:root {
+    --font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', sans-serif;
+    --primary-color: #707070;
+    --secondary-color: #666;
+    --hover-color: #007aff;
+    --background-color: #000;
+    --border-color: #000000;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--background-color);
+    border-bottom: 1px solid var(--border-color);
+    font-family: var(--font-family);
+  }
+  
+  .logo img {
+    height: 40px; /* Adjust as needed */
+  }
+  
+  .nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-item {
+    position: relative;
+    margin-left: 1.5rem;
+  }
+  
+  .nav-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    color: var(--hover-color);
+  }
+  
+  .nav-icon {
+    margin-right: 0.5rem;
+    width: 18px;
+    height: 18px;
+  }
+  
+  .dropdown {
+    cursor: pointer;
+  }
+  
+  .dropdown-icon {
+    margin-left: 0.5rem;
+    width: 14px;
+    height: 14px;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.5rem 0;
+    list-style: none;
+    margin: 0;
+    min-width: 150px;
+    z-index: 10;
+  }
+  
+  .dropdown-menu li {
+    padding: 0.5rem 1rem;
+  }
+  
+  .dropdown-menu li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  
+  .dropdown-menu li a:hover {
+    color: var(--hover-color);
+  }
+  
+  .burger {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .burger-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .nav {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: var(--background-color);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      flex-direction: column;
+      width: 100%;
+      max-width: 250px;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+  
+    .nav.open {
+      transform: translateX(0);
+    }
+  
+    .nav-list {
+      flex-direction: column;
+    }
+  
+    .nav-item {
+      margin: 0.5rem 0;
+    }
+  
+    .burger {
+      display: block;
+    }
+  }
