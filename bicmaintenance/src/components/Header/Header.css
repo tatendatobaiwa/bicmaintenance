@@ -9,8 +9,10 @@
   }
   
   .logo img {
-    height: 40px; /* Adjust as needed */
-  }
+    height: 60px; 
+    width: auto;
+    padding-top: 1rem;
+}
   
   .nav {
     display: flex;

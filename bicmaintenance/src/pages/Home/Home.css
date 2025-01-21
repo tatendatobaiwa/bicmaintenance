@@ -1,0 +1,71 @@
+/* Home.css */
+.home {
+    position: relative;
+    padding: 2rem;
+    text-align: center;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  
+  .carousel-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .slide-content {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .features {
+    margin-top: 4rem;
+  }
+  
+  .feature-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+  }
+  
+  .card h3 {
+    margin-bottom: 1rem;
+    color: #007aff;
+  }
+  
+  .card p {
+    color: #666;
+  }
+
+  /* Blob Background */
+.blob-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+  }
+  
+  .blob {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(45deg, #007aff, #00c6ff);
+    opacity: 0.2;
+    filter: blur(100px);
+  }
