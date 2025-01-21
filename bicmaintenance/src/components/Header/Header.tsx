@@ -10,15 +10,21 @@ const Header: React.FC = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const toggleReports = (): void => {
+  const toggleReports = (e: React.MouseEvent): void => {
+    e.preventDefault(); // Prevent navigation
     setIsReportsOpen(!isReportsOpen);
+  };
+
+  const closeReports = (): void => {
+    setIsReportsOpen(false);
   };
 
   return (
     <header className="header">
       <div className="logo">
-        <img src="/src/assets/logos/maintainme.png" alt="Logo" /> 
+        <img src="/src/assets/logos/maintainme.png" alt="Logo" />
       </div>
+
       <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
         <ul className="nav-list">
           <li className="nav-item">
@@ -33,8 +39,16 @@ const Header: React.FC = () => {
               <span>Chats</span>
             </a>
           </li>
-          <li className="nav-item dropdown" onClick={toggleReports}>
-            <a href="/reports" className="nav-link">
+          <li
+            className="nav-item dropdown"
+            onMouseEnter={() => setIsReportsOpen(true)} // Show on hover (desktop)
+            onMouseLeave={() => setIsReportsOpen(false)} // Hide on hover out (desktop)
+          >
+            <a
+              href="/reports"
+              className="nav-link"
+              onClick={toggleReports} // Toggle on click (mobile)
+            >
               <FileText className="nav-icon" />
               <span>Reports</span>
               <ChevronDown className="dropdown-icon" />
@@ -42,13 +56,19 @@ const Header: React.FC = () => {
             {isReportsOpen && (
               <ul className="dropdown-menu">
                 <li>
-                  <a href="/reports/open">Open</a>
+                  <a href="/reports/open" onClick={closeReports}>
+                    Open
+                  </a>
                 </li>
                 <li>
-                  <a href="/reports/closed">Closed</a>
+                  <a href="/reports/closed" onClick={closeReports}>
+                    Closed
+                  </a>
                 </li>
                 <li>
-                  <a href="/reports/in-progress">In Progress</a>
+                  <a href="/reports/in-progress" onClick={closeReports}>
+                    In Progress
+                  </a>
                 </li>
               </ul>
             )}

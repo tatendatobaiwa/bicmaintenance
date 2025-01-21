@@ -1,4 +1,4 @@
- .header {
+  .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,10 +9,10 @@
   }
   
   .logo img {
-    height: 60px; 
+    height: 60px;
     width: auto;
     padding-top: 1rem;
-}
+  }
   
   .nav {
     display: flex;
@@ -124,6 +124,12 @@
   
     .nav-item {
       margin: 0.5rem 0;
+    }
+  
+    .dropdown-menu {
+      position: static;
+      border: none;
+      box-shadow: none;
     }
   
     .burger {
