@@ -20,9 +20,9 @@ const Footer: React.FC = () => {
         <div className="footer-section">
           <h3>Legal</h3>
           <ul>
-            <li><Link to="/privacy-policy">Privacy Policy</Link></li>
-            <li><Link to="/terms-of-use">Terms of Use</Link></li>
-            <li><Link to="/about-us">About Us</Link></li>
+            <li><Link to="/privacypolicy">Privacy Policy</Link></li>
+            <li><Link to="/termsofuse">Terms of Use</Link></li>
+            <li><Link to="/aboutus">About Us</Link></li>
           </ul>
         </div>
 

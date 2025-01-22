@@ -10,7 +10,6 @@ import AboutUs from './pages/AboutUs/AboutUs';
 import TermsOfUse from './pages/TermsOfUse/TermsOfUse';
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy';
 
-
 const App: React.FC = () => {
   return (
     <BrowserRouter>

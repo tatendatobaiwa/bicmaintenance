@@ -1,56 +1,164 @@
 /* PrivacyPolicy.css */
-.privacy-policy {
-    padding: var(--spacing);
-    background-color: var(--background-color);
-    font-family: var(--font-family);
-    color: var(--primary-color);
+:root {
+    --font-primary: -apple-system, BlinkMacSystemFont, "San Francisco", sans-serif;
+    --color-secondary: #86868b;
+    --color-accent: #0071e3;
+    --section-spacing: 4rem;
+    --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   
-  .privacy-policy-content {
+  .privacy-policy {
+    background: var(--background-color);
+    padding: 6rem 2rem;
+    font-family: var(--font-family);
+    color: var(--color-primary);
+  }
+  
+  .privacy-policy-container {
     max-width: var(--max-width);
     margin: 0 auto;
+    position: relative;
   }
   
-  .privacy-policy h1 {
-    font-size: 2.5rem;
-    margin-bottom: var(--spacing);
-    color: var(--primary-color);
+  .policy-header {
     text-align: center;
+    margin-bottom: 5rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
   }
   
-  .privacy-policy h2 {
-    font-size: 1.8rem;
-    margin-top: calc(var(--spacing) * 1.5);
-    margin-bottom: calc(var(--spacing) / 2);
-    color: var(--hover-color);
+  .policy-header h1 {
+    color: #0071e3;
+    font-size: 3.5rem;
+    font-weight: 600;
+    letter-spacing: -0.022em;
+    margin-bottom: 1.2rem;
   }
   
-  .privacy-policy p {
+  .policy-subhead {
+    font-size: 1.4rem;
+    color: var(--color-secondary);
+    letter-spacing: 0.016em;
+  }
+  
+  .policy-section {
+    margin: var(--section-spacing) 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fade-in 0.8s var(--ease-out) forwards;
+  }
+  
+  @keyframes fade-in {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  
+  .title-accent {
+    color: var(--color-accent);
+    font-weight: 600;
+    font-feature-settings: "ss01";
+  }
+  
+  .section-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--color-primary);
+    max-width: 680px;
+    margin-bottom: 2rem;
+  }
+  
+  .feature-list {
+    list-style: none;
+    padding-left: 2rem;
+  }
+  
+  .feature-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .feature-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+  }
+  
+  .grid-layout {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .grid-item {
+    padding: 2rem;
+    background: rgba(0,113,227,0.03);
+    border-radius: 18px;
+    border: 1px solid rgba(0,113,227,0.08);
+  }
+  
+  .grid-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    color: var(--color-accent);
+  }
+  
+  .control-options {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .data-control {
+    padding: 1rem 2rem;
+    background: transparent;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    border-radius: 12px;
     font-size: 1rem;
-    line-height: 1.6;
-    color: var(--secondary-color);
-    margin-bottom: var(--spacing);
+    transition: all 0.3s var(--ease-out);
   }
   
-  .privacy-policy section {
-    margin-bottom: var(--spacing);
+  .data-control:hover {
+    background: var(--color-accent);
+    color: white;
   }
   
-  /* Responsive Styles */
   @media (max-width: 768px) {
-    .privacy-policy {
-      padding: 1rem;
+    .policy-header h1 {
+      font-size: 2.8rem;
     }
-  
-    .privacy-policy h1 {
-      font-size: 2rem;
+    
+    .section-title {
+      font-size: 1.8rem;
     }
-  
-    .privacy-policy h2 {
-      font-size: 1.5rem;
+    
+    .grid-layout {
+      grid-template-columns: 1fr;
     }
+    
+    .control-options {
+      flex-direction: column;
+    }
+  }
   
-    .privacy-policy p {
-      font-size: 0.9rem;
+  @media (prefers-reduced-motion: reduce) {
+    .policy-section {
+      animation: none;
+      opacity: 1;
+      transform: none;
     }
   }
