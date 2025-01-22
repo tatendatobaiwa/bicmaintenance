@@ -2,14 +2,36 @@ import React from 'react';
 import './SignIn.css';
 
 const SignIn: React.FC = () => {
+  const blobImages = [
+    '/src/assets/blobs/blob1.png',
+    '/src/assets/blobs/blob2.png',
+    '/src/assets/blobs/blob1.png',
+    '/src/assets/blobs/blob2.png',
+  ];
+
   return (
     <div className="signin-page">
-      <h1>Sign In</h1>
-      <form>
-        <input type="text" placeholder="Student ID" />
-        <input type="password" placeholder="Password" />
-        <button type="submit">Sign In</button>
-      </form>
+      {/* Background blobs */}
+      <div className="background-blobs">
+        {blobImages.map((blob, index) => (
+          <img
+            key={index}
+            src={blob}
+            alt={`Decorative blob ${index + 1}`}
+            className={`blob blob-${index + 1}`}
+          />
+        ))}
+      </div>
+
+      {/* SignIn Content */}
+      <div className="signin-content">
+        <h1>Sign In</h1>
+        <form>
+          <input type="text" placeholder="Student ID" />
+          <input type="password" placeholder="Password" />
+          <button type="submit">Sign In</button>
+        </form>
+      </div>
     </div>
   );
 };
