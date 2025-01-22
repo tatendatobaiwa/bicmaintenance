@@ -82,9 +82,9 @@
 
 /* Footer Styles */
 .landing-footer {
-  margin-top: 3rem;
+  margin-top: 1rem;
   text-align: center;
-  z-index: 2; /* Ensure footer is above blobs */
+  z-index: 2; 
 }
 
 .social-links {
