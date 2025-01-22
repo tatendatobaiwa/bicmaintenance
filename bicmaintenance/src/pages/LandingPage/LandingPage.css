@@ -8,10 +8,13 @@
   color: var(--color-primary);
   font-family: var(--font-primary);
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .logo-container {
   margin-bottom: 2rem;
+  z-index: 2; /* Ensure logo is above blobs */
 }
 
 .logo {
@@ -22,6 +25,7 @@
 .landing-content {
   max-width: var(--max-width);
   margin: 0 auto;
+  z-index: 2; /* Ensure content is above blobs */
 }
 
 .landing-title {
@@ -42,6 +46,7 @@
   display: flex;
   justify-content: center;
   gap: 1.5rem;
+  z-index: 2; /* Ensure buttons are above blobs */
 }
 
 .landing-button {
@@ -79,6 +84,7 @@
 .landing-footer {
   margin-top: 3rem;
   text-align: center;
+  z-index: 2; /* Ensure footer is above blobs */
 }
 
 .social-links {
@@ -103,23 +109,24 @@
   color: var(--color-secondary);
 }
 
+/* Blob Styles */
 .background-blobs {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  z-index: 1; /* Ensure blobs are behind content */
   overflow: hidden;
 }
 
 .blob {
-  background: none;
   position: absolute;
   width: 400px;
   height: auto;
-  filter: blur(5px); 
+  filter: blur(5px);
   animation: float 20s infinite ease-in-out;
+  background: none;
 }
 
 .blob-1 {
@@ -155,14 +162,6 @@
   }
 }
 
-
-@keyframes moveBlobs {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(50px, -30px) scale(1.1); }
-  50% { transform: translate(-50px, 50px) scale(1.2); }
-  75% { transform: translate(30px, -50px) scale(1.1); }
-}
-
 /* Responsive Styles */
 @media (max-width: 1200px) {
   .logo {
@@ -175,6 +174,30 @@
 
   .landing-subtitle {
     font-size: 1.3rem;
+  }
+
+  .blob {
+    width: 600px;
+  }
+
+  .blob-1 {
+    top: -5%;
+    left: -15%;
+  }
+
+  .blob-2 {
+    top: 15%;
+    right: -20%;
+  }
+
+  .blob-3 {
+    bottom: -20%;
+    right: -15%;
+  }
+
+  .blob-4 {
+    bottom: 0%;
+    left: -20%;
   }
 }
 
@@ -198,6 +221,30 @@
   .landing-button {
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
+  }
+
+  .blob {
+    width: 500px;
+  }
+
+  .blob-1 {
+    top: -5%;
+    left: -15%;
+  }
+
+  .blob-2 {
+    top: 15%;
+    right: -20%;
+  }
+
+  .blob-3 {
+    bottom: -20%;
+    right: -15%;
+  }
+
+  .blob-4 {
+    bottom: 0%;
+    left: -20%;
   }
 }
 
@@ -234,6 +281,30 @@
   .rights-reserved {
     font-size: 0.8rem;
   }
+
+  .blob {
+    width: 400px;
+  }
+
+  .blob-1 {
+    top: -5%;
+    left: -15%;
+  }
+
+  .blob-2 {
+    top: 15%;
+    right: -20%;
+  }
+
+  .blob-3 {
+    bottom: -20%;
+    right: -15%;
+  }
+
+  .blob-4 {
+    bottom: 0%;
+    left: -20%;
+  }
 }
 
 @media (max-width: 576px) {
@@ -269,6 +340,30 @@
   .rights-reserved {
     font-size: 0.7rem;
   }
+
+  .blob {
+    width: 275px;
+  }
+
+  .blob-1 {
+    top: -5%;
+    left: -15%;
+  }
+
+  .blob-2 {
+    top: 25%;
+    right: -20%;
+  }
+
+  .blob-3 {
+    bottom: -20%;
+    right: -15%;
+  }
+
+  .blob-4 {
+    bottom: 10%;
+    left: -20%;
+  }
 }
 
 @media (max-width: 400px) {
@@ -303,5 +398,29 @@
 
   .rights-reserved {
     font-size: 0.6rem;
+  }
+
+  .blob {
+    width: 250px;
+  }
+
+  .blob-1 {
+    top: -5%;
+    left: -15%;
+  }
+
+  .blob-2 {
+    top: 25%;
+    right: -20%;
+  }
+
+  .blob-3 {
+    bottom: -20%;
+    right: -15%;
+  }
+
+  .blob-4 {
+    bottom: 10%;
+    left: -20%;
   }
 }
