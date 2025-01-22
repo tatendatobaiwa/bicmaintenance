@@ -4,6 +4,13 @@ import './SignUp.css';
 const SignUp: React.FC = () => {
   return (
     <div className="signup-page">
+      <div className="logo-container">
+        <img
+          src="/src/assets/logos/maintainme.png"
+          alt="MaintainMe Logo"
+          className="logo"
+        />
+      </div>
       <h1>Sign Up</h1>
       <form>
         <input type="text" placeholder="Student ID" />

@@ -14,8 +14,26 @@ const LandingPage: React.FC = () => {
     navigate('/signin');
   };
 
+  const blobImages = [
+    '/src/assets/blobs/blob1.png',
+    '/src/assets/blobs/blob2.png',
+    '/src/assets/blobs/blob1.png',
+    '/src/assets/blobs/blob2.png'
+  ];
+
   return (
     <div className="landing-page">
+      {/* Background blobs */}
+      <div className="background-blobs">
+        {blobImages.map((blob, index) => (
+          <img
+            key={index}
+            src={blob}
+            alt={`Decorative blob ${index + 1}`}
+            className={`blob blob-${index + 1}`}
+          />
+        ))}
+      </div>
       {/* Logo Placeholder */}
       <div className="logo-container">
         <img
