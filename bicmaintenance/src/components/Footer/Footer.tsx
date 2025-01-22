@@ -8,11 +8,6 @@ const Footer: React.FC = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section">
-          <h3>About Us</h3>
-          <p>We are a team of developers building awesome web apps with React, Vite, and Express.</p>
-        </div>
-
-        <div className="footer-section">
           <h3>Quick Links</h3>
           <ul>
             <li><Link to="/">Home</Link></li>

@@ -30,6 +30,7 @@ nav {
 .logo img {
   max-height: 65px;
   width: auto;
+  padding-top: 1rem;
 }
 
 .nav-links {
@@ -44,6 +45,7 @@ nav {
   transform: none;
   transition: transform 0.3s ease, opacity 0.3s ease;
   white-space: nowrap;
+  font-family: var(--font-family);
 }
 
 .nav-item a span {
@@ -90,6 +92,7 @@ nav {
   .logo img {
     max-height: 55px;
     width: auto;
+    padding-top: 1rem;
   }
 
   .menu-toggle {
