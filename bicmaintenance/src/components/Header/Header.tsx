@@ -22,7 +22,7 @@ const Header: React.FC = () => {
         <div className="container">
           <div className="nav-content">
             <div>
-              <Link to="/" className="logo">
+              <Link to="/home" className="logo">
                 <img src="/src/assets/logos/maintainme.png" alt="Logo" />
               </Link>
             </div>
@@ -36,7 +36,7 @@ const Header: React.FC = () => {
             <ul className={`nav-links ${isMenuActive ? 'active' : ''}`}>
               <li className="nav-item">
                 <Link
-                  to="/"
+                  to="/home"
                   className={`nav-link ${isActive('/') ? 'active' : ''}`}
                   onClick={toggleMenu}
                 >
