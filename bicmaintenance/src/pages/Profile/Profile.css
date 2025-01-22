@@ -123,11 +123,12 @@
   padding: 3rem;
   overflow-y: auto; 
   height: 145vh; 
+  width: 100%;
 }
 
 .settings-section {
   margin-top: 6rem;
-  max-width: 800px;
+  width: 100%;
 }
 
 .section-title {
@@ -198,7 +199,7 @@
 }
 
 .submit-button:hover {
-  background: #005bb5;
+  background: #004f64;
 }
 
 /* Responsive Styles */
@@ -212,11 +213,89 @@
     height: auto;
     border-right: none;
     border-bottom: 1px solid var(--color-border);
+    padding: 3rem 2rem;  /* Reduced from 10rem */
   }
 
   .profile-content {
     margin-left: 0;
     padding: 2rem;
-    height: auto; /* Reset height for mobile */
+    height: auto;
+  }
+
+  .settings-section {
+    margin-top: 3rem;  /* Reduced from 6rem */
+  }
+}
+
+@media (max-width: 576px) {
+  .profile-sidebar {
+    padding: 1.5rem 1rem !important;  /* Reduced vertical padding */
+  }
+
+  .avatar-container {
+    width: 100px !important;  /* Smaller avatar container */
+    margin-bottom: 1rem;
+  }
+
+  .user-avatar {
+    width: 100px !important;
+    height: 100px !important;
+    font-size: 1.8rem !important;  /* Smaller initials */
+  }
+
+  .avatar-edit {
+    width: 30px !important;
+    height: 30px !important;
+    bottom: 5px;
+    right: 5px;
+  }
+
+  .username {
+    font-size: 1.2rem !important;  /* Smaller username */
+    margin: 0.3rem 0;
+  }
+
+  .user-email {
+    font-size: 0.8rem !important;  /* Smaller email text */
+  }
+
+  .profile-nav {
+    gap: 0.3rem;
+  }
+
+  .nav-item {
+    padding: 0.8rem !important;
+    font-size: 0.9rem;  /* Smaller nav text */
+  }
+
+  .profile-content {
+    padding: 1.5rem !important;  /* Tighter padding */
+  }
+
+  .settings-section {
+    margin-top: 2rem !important;  /* Reduced top spacing */
+  }
+
+  .section-title {
+    font-size: 1.2rem !important;  /* Smaller section titles */
+    margin-bottom: 1.5rem;
+  }
+
+  .info-group label {
+    font-size: 0.8rem !important;  /* Smaller labels */
+  }
+
+  .info-text {
+    font-size: 0.9rem !important;  /* Smaller info text */
+  }
+
+  .form-input {
+    padding: 0.6rem !important;  /* Compact input fields */
+    font-size: 0.9rem !important;
+  }
+
+  .submit-button {
+    padding: 0.6rem 1rem !important;  /* Smaller button */
+    font-size: 0.9rem !important;
   }
 }
