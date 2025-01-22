@@ -167,6 +167,31 @@
     background: var(--color-accent);
     color: white;
   }
+
+  /* Scroll-to-top button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--color-accent);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
+    transition: background-color 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .scroll-to-top:hover {
+    background-color: #005bb5;
+    transform: scale(1.1);
+  }
   
   @media (max-width: 768px) {
     .policy-header h1 {
@@ -184,6 +209,14 @@
     .control-options {
       flex-direction: column;
     }
+
+    .scroll-to-top {
+        bottom: 1rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+      }
   }
   
   @media (prefers-reduced-motion: reduce) {
