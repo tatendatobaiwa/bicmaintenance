@@ -57,7 +57,7 @@
 
 .signup-page button:hover,
 .signin-page button:hover {
-  background-color: #005bb5;
+  background-color: #0092b9;
 }
 
 /* Blob Styles */
@@ -110,6 +110,46 @@
   }
   50% {
     transform: translateY(-20px);
+  }
+}
+
+/* Back Button Styles */
+.back-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  z-index: 3; /* Ensure button is above blobs and content */
+  transition: background-color 0.3s var(--ease-out), color 0.3s var(--ease-out);
+}
+
+.back-button:hover {
+  background-color: #0092b9;
+  color: white;
+}
+
+/* Responsive Styles for Back Button */
+@media (max-width: 768px) {
+  .back-button {
+    top: 0.5rem;
+    left: 0.5rem;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .back-button {
+    top: 0.5rem;
+    left: 0.5rem;
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
   }
 }
 

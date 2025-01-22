@@ -1,13 +1,19 @@
 import React from 'react';
 import './SignIn.css';
+import { useNavigate } from 'react-router-dom';
 
 const SignIn: React.FC = () => {
+  const navigate = useNavigate();
   const blobImages = [
     '/src/assets/blobs/blob1.png',
     '/src/assets/blobs/blob2.png',
     '/src/assets/blobs/blob1.png',
     '/src/assets/blobs/blob2.png',
   ];
+
+  const handleBackClick = () => {
+    navigate('/');
+  };
 
   return (
     <div className="signin-page">
@@ -22,6 +28,11 @@ const SignIn: React.FC = () => {
           />
         ))}
       </div>
+
+      {/* Back Button */}
+      <button className="back-button" onClick={handleBackClick}>
+        ← Back to Landing
+      </button>
 
       {/* SignIn Content */}
       <div className="signin-content">

@@ -1,13 +1,19 @@
 import React from 'react';
 import './SignUp.css';
+import { useNavigate } from 'react-router-dom';
 
 const SignUp: React.FC = () => {
+  const navigate = useNavigate();
   const blobImages = [
     '/src/assets/blobs/blob1.png',
     '/src/assets/blobs/blob2.png',
     '/src/assets/blobs/blob1.png',
     '/src/assets/blobs/blob2.png',
   ];
+
+  const handleBackClick = () => {
+    navigate('/');
+  };
 
   return (
     <div className="signup-page">
@@ -22,6 +28,11 @@ const SignUp: React.FC = () => {
           />
         ))}
       </div>
+
+      {/* Back Button */}
+      <button className="back-button" onClick={handleBackClick}>
+        ← Back to Landing
+      </button>
 
       {/* SignUp Content */}
       <div className="signup-content">
