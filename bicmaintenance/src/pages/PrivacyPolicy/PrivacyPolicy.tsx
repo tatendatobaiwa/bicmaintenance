@@ -8,7 +8,7 @@ const PrivacyPolicy: React.FC = () => {
         <div className="policy-header">
           <h1>Privacy Policy</h1>
           <p className="policy-subhead">
-            Effective Date: January 1, 2024
+            Effective Date: January 22, 2025
           </p>
         </div>
 

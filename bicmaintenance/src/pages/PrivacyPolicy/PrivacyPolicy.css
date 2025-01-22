@@ -1,16 +1,18 @@
-/* PrivacyPolicy.css */
 :root {
     --font-primary: -apple-system, BlinkMacSystemFont, "San Francisco", sans-serif;
-    --color-secondary: #86868b;
-    --color-accent: #0071e3;
+    --color-primary: #a7a7a7;
+    --color-secondary: #a7a7a7;
+    --color-accent: #0092b9;
+    --color-background: #000;
     --section-spacing: 4rem;
+    --max-width: 920px;
     --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   
   .privacy-policy {
-    background: var(--background-color);
+    background: var(--color-background);
     padding: 6rem 2rem;
-    font-family: var(--font-family);
+    font-family: var(--font-primary);
     color: var(--color-primary);
   }
   
@@ -24,15 +26,15 @@
     text-align: center;
     margin-bottom: 5rem;
     padding-bottom: 3rem;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgb(109, 109, 109);
   }
   
   .policy-header h1 {
-    color: #0071e3;
     font-size: 3.5rem;
     font-weight: 600;
     letter-spacing: -0.022em;
     margin-bottom: 1.2rem;
+    color: var(--color-accent);
   }
   
   .policy-subhead {
@@ -74,7 +76,6 @@
     font-size: 1.1rem;
     line-height: 1.7;
     color: var(--color-primary);
-    max-width: 680px;
     margin-bottom: 2rem;
   }
   
@@ -105,15 +106,45 @@
   
   .grid-item {
     padding: 2rem;
-    background: rgba(0,113,227,0.03);
+    background-color: rgb(10, 15, 20);
     border-radius: 18px;
-    border: 1px solid rgba(0,113,227,0.08);
+    border: 1px solid rgba(0, 113, 227, 0.08);
+    transition: all 0.3s var(--ease-out);
+  }
+  
+  .grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 113, 227, 0.1);
   }
   
   .grid-item h3 {
     font-size: 1.3rem;
     margin-bottom: 0.8rem;
     color: var(--color-accent);
+  }
+  
+  .special-item {
+    background-color: rgba(0, 128, 255, 0.1);
+    border: 2px solid var(--color-accent);
+    box-shadow: 0 4px 12px rgba(0, 113, 227, 0.1);
+    transform: scale(1.02);
+  }
+  
+  .special-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 113, 227, 0.2);
+  }
+  
+  .special-item h3 {
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: 1.4rem;
+  }
+  
+  .special-item p {
+    color: var(--color-primary);
+    font-size: 1.1rem;
+    line-height: 1.6;
   }
   
   .control-options {
@@ -141,15 +172,15 @@
     .policy-header h1 {
       font-size: 2.8rem;
     }
-    
+  
     .section-title {
       font-size: 1.8rem;
     }
-    
+  
     .grid-layout {
       grid-template-columns: 1fr;
     }
-    
+  
     .control-options {
       flex-direction: column;
     }
