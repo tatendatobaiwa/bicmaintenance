@@ -22,7 +22,7 @@
   border-right: 1px solid var(--color-border);
   padding: 10rem 2rem;
   background: var(--color-background);
-  height: 100vh; 
+  height: 150vh; 
   overflow-y: auto; 
 }
 
@@ -229,11 +229,11 @@
 
 @media (max-width: 576px) {
   .profile-sidebar {
-    padding: 1.5rem 1rem !important;  /* Reduced vertical padding */
+    padding: 7.5rem 1rem !important;  
   }
 
   .avatar-container {
-    width: 100px !important;  /* Smaller avatar container */
+    width: 100px !important;  
     margin-bottom: 1rem;
   }
 
