@@ -59,6 +59,10 @@
   background-color: #004f64;
 }
 
+.logoup {
+  height: 100px;
+}
+
 /* Blob Styles */
 .background-blobs {
   position: absolute;
@@ -144,6 +148,10 @@
 }
 
 @media (max-width: 576px) {
+  .logoup {
+    height: 80px;
+  }
+
   .back-button {
     top: 0.5rem;
     left: 0.5rem;
@@ -258,6 +266,14 @@
 }
 
 @media (max-width: 400px) {
+  .logoup {
+    height: 60px;
+  }
+
+  .logo-container {
+    margin-bottom: 0;
+  }
+  
   .blob {
     width: 250px;
   }
