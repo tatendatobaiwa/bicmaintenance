@@ -13,8 +13,8 @@
 }
 
 .logo-container {
-  margin-bottom: 2rem;
-  z-index: 2; /* Ensure logo is above blobs */
+  margin: 2rem 0;
+  z-index: 2; 
 }
 
 .logo {

@@ -191,6 +191,27 @@
   }
 }
 
+/* Error Message Styles */
+.error-message {
+  color: #ff4d4d;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  text-align: left;
+}
+
+/* Responsive Styles for Error Messages */
+@media (max-width: 768px) {
+  .error-message {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .error-message {
+    font-size: 0.6rem;
+  }
+}
+
 /* Responsive Styles */
 @media (max-width: 1200px) {
   .blob {
