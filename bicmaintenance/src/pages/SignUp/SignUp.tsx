@@ -31,7 +31,7 @@ const SignUp: React.FC = () => {
 
       {/* Back Button */}
       <button className="back-button" onClick={handleBackClick}>
-        ← Back to Landing
+        Go Back
       </button>
 
       {/* SignUp Content */}

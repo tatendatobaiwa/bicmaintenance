@@ -57,7 +57,7 @@
 
 .signup-page button:hover,
 .signin-page button:hover {
-  background-color: #005bb5;
+  background-color: #004f64;
 }
 
 /* Blob Styles */
@@ -130,7 +130,7 @@
 }
 
 .back-button:hover {
-  background-color: var(--color-accent);
+  background-color: #004f64;
   color: white;
 }
 
