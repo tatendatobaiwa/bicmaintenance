@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} MaintainMe. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} BIUST Innovation Club. All rights reserved.</p>
       </div>
     </footer>
   );
