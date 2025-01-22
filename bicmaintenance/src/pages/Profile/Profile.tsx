@@ -6,41 +6,64 @@ const Profile: React.FC = () => {
   const [activeTab, setActiveTab] = useState('account');
   const [twoFactorEnabled, setTwoFactorEnabled] = useState(true);
   const [notificationsEnabled, setNotificationsEnabled] = useState(true);
+  const [currentPassword, setCurrentPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmNewPassword, setConfirmNewPassword] = useState('');
+
+  // Mock data (replace with data from the database later)
+  const studentName = 'Thabo Tshwane';
+  const studentId = '21547843';
+  const studentEmail = 'tt21547843@studentmail.biust.ac.bw';
+
+  // Generate initials and random color for the profile picture
+  const getInitials = (name: string) => {
+    const names = name.split(' ');
+    return names.map((n) => n[0]).join('');
+  };
+
+  const getRandomColor = () => {
+    const colors = ['#FF6B6B', '#4ECDC4', '#FFD166', '#06D6A0', '#118AB2', '#073B4C'];
+    return colors[Math.floor(Math.random() * colors.length)];
+  };
+
+  const handleChangePassword = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Add logic to validate and change the password
+    console.log('Password changed successfully!');
+  };
 
   return (
     <div className="profile-container">
       <div className="profile-sidebar">
         <div className="user-card">
           <div className="avatar-container">
-            <img 
-              src="https://via.placeholder.com/150" 
-              alt="User Avatar" 
+            <div
               className="user-avatar"
-            />
-            <button className="avatar-edit">
-              <FiSettings className="edit-icon" />
-            </button>
+              style={{ backgroundColor: getRandomColor() }}
+            >
+              {getInitials(studentName)}
+            </div>
           </div>
-          <h2 className="username">John Developer</h2>
-          <p className="user-email">john@maintainme.com</p>
+          <h2 className="username">{studentName}</h2>
+          <p className="user-email">{studentEmail}</p>
         </div>
 
         <nav className="profile-nav">
-          <button 
+          <button
             className={`nav-item ${activeTab === 'account' ? 'active' : ''}`}
             onClick={() => setActiveTab('account')}
           >
             <FiUser className="nav-icon" />
             Account
           </button>
-          <button 
+          <button
             className={`nav-item ${activeTab === 'security' ? 'active' : ''}`}
             onClick={() => setActiveTab('security')}
           >
             <FiLock className="nav-icon" />
             Security
           </button>
-          <button 
+          <button
             className={`nav-item ${activeTab === 'preferences' ? 'active' : ''}`}
             onClick={() => setActiveTab('preferences')}
           >
@@ -55,31 +78,60 @@ const Profile: React.FC = () => {
           <div className="settings-section">
             <h2 className="section-title">
               <FiUser className="section-icon" />
-              Account Settings
+              Account Information
             </h2>
-            <div className="form-group">
-              <label>Username</label>
-              <input 
-                type="text" 
-                defaultValue="John Developer" 
-                className="form-input"
-              />
+            <div className="info-group">
+              <label>Full Name</label>
+              <p className="info-text">{studentName}</p>
             </div>
-            <div className="form-group">
+            <div className="info-group">
+              <label>Student ID</label>
+              <p className="info-text">{studentId}</p>
+            </div>
+            <div className="info-group">
               <label>Email</label>
-              <input 
-                type="email" 
-                defaultValue="john@maintainme.com" 
-                className="form-input"
-              />
+              <p className="info-text">{studentEmail}</p>
             </div>
-            <div className="form-group">
-              <label>Bio</label>
-              <textarea 
-                className="form-textarea"
-                defaultValue="Full-stack developer passionate about building maintainable systems"
-              />
-            </div>
+
+            <h2 className="section-title">
+              <FiLock className="section-icon" />
+              Change Password
+            </h2>
+            <form onSubmit={handleChangePassword}>
+              <div className="form-group">
+                <label>Current Password</label>
+                <input
+                  type="password"
+                  value={currentPassword}
+                  onChange={(e) => setCurrentPassword(e.target.value)}
+                  className="form-input"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label>New Password</label>
+                <input
+                  type="password"
+                  value={newPassword}
+                  onChange={(e) => setNewPassword(e.target.value)}
+                  className="form-input"
+                  required
+                />
+              </div>
+              <div className="form-group">
+                <label>Confirm New Password</label>
+                <input
+                  type="password"
+                  value={confirmNewPassword}
+                  onChange={(e) => setConfirmNewPassword(e.target.value)}
+                  className="form-input"
+                  required
+                />
+              </div>
+              <button type="submit" className="submit-button">
+                Change Password
+              </button>
+            </form>
           </div>
         )}
 
@@ -98,26 +150,13 @@ const Profile: React.FC = () => {
                 </div>
               </div>
               <label className="toggle-switch">
-                <input 
-                  type="checkbox" 
+                <input
+                  type="checkbox"
                   checked={twoFactorEnabled}
                   onChange={(e) => setTwoFactorEnabled(e.target.checked)}
                 />
                 <span className="slider"></span>
               </label>
-            </div>
-            
-            <div className="security-card">
-              <div className="security-info">
-                <FiMail className="security-icon" />
-                <div>
-                  <h3>Connected Devices</h3>
-                  <p>3 devices currently active</p>
-                </div>
-              </div>
-              <button className="manage-button">
-                Manage
-              </button>
             </div>
           </div>
         )}
@@ -134,24 +173,13 @@ const Profile: React.FC = () => {
                 <p>Receive important updates via email</p>
               </div>
               <label className="toggle-switch">
-                <input 
-                  type="checkbox" 
+                <input
+                  type="checkbox"
                   checked={notificationsEnabled}
                   onChange={(e) => setNotificationsEnabled(e.target.checked)}
                 />
                 <span className="slider"></span>
               </label>
-            </div>
-            
-            <div className="preference-item">
-              <div className="preference-info">
-                <h3>Theme Preference</h3>
-                <p>Choose between light and dark themes</p>
-              </div>
-              <div className="theme-switcher">
-                <button className="theme-option light">Light</button>
-                <button className="theme-option dark">Dark</button>
-              </div>
             </div>
           </div>
         )}
