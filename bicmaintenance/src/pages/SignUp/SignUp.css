@@ -160,6 +160,37 @@
   }
 }
 
+/* Switch Page Text and Link Styles */
+.switch-page-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--color-secondary);
+}
+
+.switch-page-link {
+  color: var(--color-accent);
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s var(--ease-out);
+}
+
+.switch-page-link:hover {
+  color: #004f64;
+}
+
+/* Responsive Styles for Switch Page Text */
+@media (max-width: 768px) {
+  .switch-page-text {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .switch-page-text {
+    font-size: 0.7rem;
+  }
+}
+
 /* Responsive Styles */
 @media (max-width: 1200px) {
   .blob {

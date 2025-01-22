@@ -16,6 +16,10 @@ const SignUp: React.FC = () => {
     navigate('/');
   };
 
+  const handleSignInClick = () => {
+    navigate('/signin');
+  };
+
   return (
     <div className="signup-page">
       {/* Background blobs */}
@@ -50,6 +54,12 @@ const SignUp: React.FC = () => {
           <input type="password" placeholder="Confirm Password" />
           <button type="submit">Sign Up</button>
         </form>
+        <p className="switch-page-text">
+          Already have an account?{' '}
+          <span className="switch-page-link" onClick={handleSignInClick}>
+            Sign In
+          </span>
+        </p>
       </div>
       {/* Footer */}
       <footer className="landing-footer">
