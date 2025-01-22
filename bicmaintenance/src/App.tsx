@@ -16,10 +16,8 @@ import SignIn from './pages/SignIn/SignIn';
 const AppContent: React.FC = () => {
   const location = useLocation();
 
-  // Define routes where the Header and Footer should be hidden
   const hideHeaderFooterRoutes = ['/', '/signup', '/signin'];
 
-  // Check if the current route is in the hideHeaderFooterRoutes array
   const shouldHideHeaderFooter = hideHeaderFooterRoutes.includes(location.pathname);
 
   return (
