@@ -60,7 +60,6 @@ const Reports: React.FC = () => {
   return (
     <div className="reports-container">
       <div className="reports-header">
-        <h1>Fault Reports</h1>
         <button className="new-report-button">
           <FiPlus /> New Report
         </button>
