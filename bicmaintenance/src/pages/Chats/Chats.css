@@ -9,7 +9,7 @@
   
   .chat-sidebar {
     width: 280px;
-    background: #1d1d1f;
+    background: #000;
     padding: 1.5rem;
     border-right: 1px solid var(--color-border);
   }
