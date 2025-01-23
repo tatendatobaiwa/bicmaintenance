@@ -5,13 +5,12 @@ import './Header.css';
 
 const Header: React.FC = () => {
   const [isMenuActive, setMenuActive] = useState<boolean>(false);
-  const location = useLocation(); // Get the current route
+  const location = useLocation();
 
   const toggleMenu = (): void => {
     setMenuActive(!isMenuActive);
   };
 
-  // Function to check if a link is active
   const isActive = (path: string): boolean => {
     return location.pathname === path;
   };

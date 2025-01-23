@@ -128,7 +128,7 @@
   border-radius: 8px;
   font-size: 0.9rem;
   cursor: pointer;
-  z-index: 3; /* Ensure button is above blobs and content */
+  z-index: 3; 
   transition: background-color 0.3s var(--ease-out), color 0.3s var(--ease-out);
 }
 

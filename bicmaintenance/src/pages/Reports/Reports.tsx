@@ -22,7 +22,6 @@ const Reports: React.FC = () => {
   const problemLocations = ['Room', 'Ablution', 'Outdoor Sink', 'Indoor Sink', 'Common Room'];
   const wings = ['North', 'South', 'East', 'West'];
 
-  // Mock data for sampleReports
   const sampleReports = [
     {
       id: 1,
@@ -53,7 +52,6 @@ const Reports: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Submit logic here
     console.log('Report submitted:', newReport);
   };
 

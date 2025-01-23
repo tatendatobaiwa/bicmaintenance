@@ -30,7 +30,6 @@ const SignUp: React.FC = () => {
   };
 
   const validateStudentId = (id: string): boolean => {
-    // Check if the ID is exactly 8 characters long
     if (id.length !== 8) {
       setErrors((prev) => ({
         ...prev,
@@ -39,7 +38,6 @@ const SignUp: React.FC = () => {
       return false;
     }
 
-    // Check if the first 2 characters are numbers between 11 and 24
     const firstTwoDigits = parseInt(id.substring(0, 2), 10);
     if (isNaN(firstTwoDigits) || firstTwoDigits < 11 || firstTwoDigits > 24) {
       setErrors((prev) => ({
@@ -49,13 +47,11 @@ const SignUp: React.FC = () => {
       return false;
     }
 
-    // Clear the error if validation passes
     setErrors((prev) => ({ ...prev, studentId: '' }));
     return true;
   };
 
   const validatePassword = (password: string): boolean => {
-    // Check if the password contains at least one number, one letter, and one special character
     const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     if (!passwordRegex.test(password)) {
       setErrors((prev) => ({
@@ -66,13 +62,11 @@ const SignUp: React.FC = () => {
       return false;
     }
 
-    // Clear the error if validation passes
     setErrors((prev) => ({ ...prev, password: '' }));
     return true;
   };
 
   const validateConfirmPassword = (confirmPassword: string): boolean => {
-    // Check if the confirm password matches the password
     if (confirmPassword !== password) {
       setErrors((prev) => ({
         ...prev,
@@ -81,7 +75,6 @@ const SignUp: React.FC = () => {
       return false;
     }
 
-    // Clear the error if validation passes
     setErrors((prev) => ({ ...prev, confirmPassword: '' }));
     return true;
   };
@@ -89,16 +82,12 @@ const SignUp: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Validate all fields
     const isStudentIdValid = validateStudentId(studentId);
     const isPasswordValid = validatePassword(password);
     const isConfirmPasswordValid = validateConfirmPassword(confirmPassword);
 
-    // If all fields are valid, proceed with form submission
     if (isStudentIdValid && isPasswordValid && isConfirmPasswordValid) {
-      // Handle form submission (e.g., send data to the server)
       console.log('Form submitted successfully!');
-      // Navigate to another page or show a success message
     }
   };
 

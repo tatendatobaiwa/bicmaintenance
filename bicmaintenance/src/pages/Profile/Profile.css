@@ -213,7 +213,7 @@
     height: auto;
     border-right: none;
     border-bottom: 1px solid var(--color-border);
-    padding: 3rem 2rem;  /* Reduced from 10rem */
+    padding: 3rem 2rem;  
   }
 
   .profile-content {
@@ -223,7 +223,7 @@
   }
 
   .settings-section {
-    margin-top: 3rem;  /* Reduced from 6rem */
+    margin-top: 3rem;  
   }
 }
 
@@ -240,7 +240,7 @@
   .user-avatar {
     width: 100px !important;
     height: 100px !important;
-    font-size: 1.8rem !important;  /* Smaller initials */
+    font-size: 1.8rem !important; 
   }
 
   .avatar-edit {
@@ -251,12 +251,12 @@
   }
 
   .username {
-    font-size: 1.2rem !important;  /* Smaller username */
+    font-size: 1.2rem !important;  
     margin: 0.3rem 0;
   }
 
   .user-email {
-    font-size: 0.8rem !important;  /* Smaller email text */
+    font-size: 0.8rem !important;  
   }
 
   .profile-nav {
@@ -265,37 +265,37 @@
 
   .nav-item {
     padding: 0.8rem !important;
-    font-size: 0.9rem;  /* Smaller nav text */
+    font-size: 0.9rem;  
   }
 
   .profile-content {
-    padding: 1.5rem !important;  /* Tighter padding */
+    padding: 1.5rem !important;  
   }
 
   .settings-section {
-    margin-top: 2rem !important;  /* Reduced top spacing */
+    margin-top: 2rem !important; 
   }
 
   .section-title {
-    font-size: 1.2rem !important;  /* Smaller section titles */
+    font-size: 1.2rem !important;
     margin-bottom: 1.5rem;
   }
 
   .info-group label {
-    font-size: 0.8rem !important;  /* Smaller labels */
+    font-size: 0.8rem !important; 
   }
 
   .info-text {
-    font-size: 0.9rem !important;  /* Smaller info text */
+    font-size: 0.9rem !important;
   }
 
   .form-input {
-    padding: 0.6rem !important;  /* Compact input fields */
+    padding: 0.6rem !important;  
     font-size: 0.9rem !important;
   }
 
   .submit-button {
-    padding: 0.6rem 1rem !important;  /* Smaller button */
+    padding: 0.6rem 1rem !important; 
     font-size: 0.9rem !important;
   }
 }

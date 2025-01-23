@@ -10,12 +10,10 @@ const Profile: React.FC = () => {
   const [newPassword, setNewPassword] = useState('');
   const [confirmNewPassword, setConfirmNewPassword] = useState('');
 
-  // Mock data (replace with data from the database later)
   const studentName = 'Thabo Tshwane';
   const studentId = '21547843';
   const studentEmail = 'tt21547843@studentmail.biust.ac.bw';
 
-  // Generate initials and random color for the profile picture
   const getInitials = (name: string) => {
     const names = name.split(' ');
     return names.map((n) => n[0]).join('');
@@ -28,7 +26,6 @@ const Profile: React.FC = () => {
 
   const handleChangePassword = (e: React.FormEvent) => {
     e.preventDefault();
-    // Add logic to validate and change the password
     console.log('Password changed successfully!');
   };
 

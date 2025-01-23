@@ -24,12 +24,9 @@ const AppContent: React.FC = () => {
     <div>
       {!shouldHideHeaderFooter && <Header />}
       <Routes>
-        {/* Landing Page as the default route */}
         <Route path="/" element={<LandingPage />} />
-        {/* SignUp and SignIn routes */}
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
-        {/* Existing routes */}
         <Route path="/home" element={<Home />} />
         <Route path="/chats" element={<Chats />} />
         <Route path="/reports" element={<Reports />} />

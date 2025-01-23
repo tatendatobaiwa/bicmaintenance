@@ -77,8 +77,8 @@ nav {
 
 /* Active link styles */
 .nav-links li a.active {
-  color: var(--hover-color); /* Use the hover color for active links */
-  font-weight: bold; /* Optional: Make the active link bold */
+  color: var(--hover-color); 
+  font-weight: bold; 
 }
 
 .menu-toggle {

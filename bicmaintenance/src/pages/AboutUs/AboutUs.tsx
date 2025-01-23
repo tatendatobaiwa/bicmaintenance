@@ -4,12 +4,10 @@ import './AboutUs.css';
 const AboutUs: React.FC = () => {
   const [showScrollButton, setShowScrollButton] = useState<boolean>(false);
 
-  // Scroll to top on route change
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Show/hide scroll-to-top button based on scroll position
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 300) {
@@ -23,7 +21,6 @@ const AboutUs: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Scroll to top function
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
