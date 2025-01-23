@@ -76,6 +76,32 @@ const Reports: React.FC = () => {
         <h2>Submit New Report</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-row">
+          <div className="form-group">
+              <label>Location</label>
+              <select
+                value={newReport.faultType}
+                onChange={(e) => setNewReport({ ...newReport, faultType: e.target.value })}
+                required
+              >
+                <option value="">Select Location</option>
+                <option value="Old Main Boys">Old Main Boys</option>
+                <option value="Old Main Girls">Old Main Girls</option>
+                <option value="New Main Boys">New Main Boys</option>
+                <option value="New Main Girls">New Main Girls</option>
+                <option value="Block 1">Block 1</option>
+                <option value="Block 2">Block 2</option>
+                <option value="Block 3">Block 3</option>
+                <option value="Block 4">Block 4</option>
+                <option value="Block 5">Block 5</option>
+                <option value="Block 6">Block 6</option>
+                <option value="Block A">Block A</option>
+                <option value="Block B">Block B</option>
+                <option value="Block C">Block C</option>
+                <option value="Block D">Block D</option>
+                <option value="Block E">Block E</option>
+                <option value="Block F">Block F</option>
+              </select>
+            </div>
             <div className="form-group">
               <label>Room Number</label>
               <input
