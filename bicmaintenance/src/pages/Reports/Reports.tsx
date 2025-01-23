@@ -6,13 +6,20 @@ const Reports: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'open' | 'closed'>('open');
   const [newReport, setNewReport] = useState({
     roomNumber: '',
+    building: '',
+    floor: '',
+    location: '',
     faultType: '',
     priority: 'medium',
     description: '',
     images: [] as File[],
   });
 
-  // Mock data
+  const mainBuildings = ['Old Main Boys', 'Old Main Girls', 'New Main Boys', 'New Main Girls'];
+  const floors = ['Ground', 'First', 'Second'];
+  const problemLocations = ['Room', 'Ablution', 'Outdoor Sink', 'Indoor Sink', 'Common Room'];
+
+  // Mock data for sampleReports
   const sampleReports = [
     {
       id: 1,
@@ -76,14 +83,14 @@ const Reports: React.FC = () => {
         <h2>Submit New Report</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-row">
-          <div className="form-group">
-              <label>Location</label>
+            <div className="form-group">
+              <label>Building</label>
               <select
-                value={newReport.faultType}
-                onChange={(e) => setNewReport({ ...newReport, faultType: e.target.value })}
+                value={newReport.building}
+                onChange={(e) => setNewReport({ ...newReport, building: e.target.value })}
                 required
               >
-                <option value="">Select Location</option>
+                <option value="">Select Building</option>
                 <option value="Old Main Boys">Old Main Boys</option>
                 <option value="Old Main Girls">Old Main Girls</option>
                 <option value="New Main Boys">New Main Boys</option>
@@ -108,6 +115,42 @@ const Reports: React.FC = () => {
                 <option value="Sekgoma 2">Sekgoma 2</option>
               </select>
             </div>
+
+            {/* Floor Selection (Conditional) */}
+            {mainBuildings.includes(newReport.building) && (
+              <div className="form-group">
+                <label>Floor</label>
+                <select
+                  value={newReport.floor}
+                  onChange={(e) => setNewReport({ ...newReport, floor: e.target.value })}
+                  required
+                >
+                  <option value="">Select Floor</option>
+                  {floors.map((floor) => (
+                    <option key={floor} value={floor}>
+                      {floor}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
+
+            <div className="form-group">
+              <label>Problem Location</label>
+              <select
+                value={newReport.location}
+                onChange={(e) => setNewReport({ ...newReport, location: e.target.value })}
+                required
+              >
+                <option value="">Select Location</option>
+                {problemLocations.map((location) => (
+                  <option key={location} value={location}>
+                    {location}
+                  </option>
+                ))}
+              </select>
+            </div>
+
             <div className="form-group">
               <label>Room Number</label>
               <input
@@ -117,7 +160,9 @@ const Reports: React.FC = () => {
                 required
               />
             </div>
+          </div>
 
+          <div className="form-row">
             <div className="form-group">
               <label>Fault Type</label>
               <select
