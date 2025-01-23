@@ -9,6 +9,7 @@ const Reports: React.FC = () => {
     building: '',
     floor: '',
     location: '',
+    wing: '',
     faultType: '',
     priority: 'medium',
     description: '',
@@ -18,6 +19,7 @@ const Reports: React.FC = () => {
   const mainBuildings = ['Old Main Boys', 'Old Main Girls', 'New Main Boys', 'New Main Girls'];
   const floors = ['Ground', 'First', 'Second'];
   const problemLocations = ['Room', 'Ablution', 'Outdoor Sink', 'Indoor Sink', 'Common Room'];
+  const wings = ['North', 'South', 'East', 'West'];
 
   // Mock data for sampleReports
   const sampleReports = [
@@ -151,15 +153,37 @@ const Reports: React.FC = () => {
               </select>
             </div>
 
-            <div className="form-group">
-              <label>Room Number</label>
-              <input
-                type="text"
-                value={newReport.roomNumber}
-                onChange={(e) => setNewReport({ ...newReport, roomNumber: e.target.value })}
-                required
-              />
-            </div>
+            {/* Room Number (Conditional) */}
+            {newReport.location === 'Room' && (
+              <div className="form-group">
+                <label>Room Number</label>
+                <input
+                  type="text"
+                  value={newReport.roomNumber}
+                  onChange={(e) => setNewReport({ ...newReport, roomNumber: e.target.value })}
+                  required
+                />
+              </div>
+            )}
+
+            {/* Wing Selection (Conditional) */}
+            {(newReport.location === 'Ablution' || newReport.location === 'Outdoor Sink') && (
+              <div className="form-group">
+                <label>Wing</label>
+                <select
+                  value={newReport.wing}
+                  onChange={(e) => setNewReport({ ...newReport, wing: e.target.value })}
+                  required
+                >
+                  <option value="">Select Wing</option>
+                  {wings.map((wing) => (
+                    <option key={wing} value={wing}>
+                      {wing}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
           </div>
 
           <div className="form-row">
