@@ -1,71 +1,99 @@
-/* Home.css */
-.home {
-    position: relative;
-    padding: 2rem;
-    text-align: center;
-    min-height: 100vh;
-    overflow: hidden;
-  }
-  
-  .carousel-container {
-    max-width: 800px;
-    margin: 2rem auto;
-    position: relative;
-    z-index: 1;
-  }
-  
-  .slide-content {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .features {
-    margin-top: 4rem;
-  }
-  
-  .feature-cards {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-  
-  .card {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 300px;
-    text-align: center;
-  }
-  
-  .card h3 {
-    margin-bottom: 1rem;
-    color: #0092b9;
-  }
-  
-  .card p {
-    color: #666;
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #000;
+  color: white;
+  font-family: var(--font-primary);
+  padding: 8rem 2rem;
+  position: relative; /* Ensure blobs are positioned relative to this container */
+  overflow: hidden; /* Prevent blobs from overflowing */
+}
+
+.backgrounds-blobs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Place blobs behind everything */
+  pointer-events: none; /* Ensure blobs don't block interactions */
+}
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative; /* Ensure content stays above blobs */
+  z-index: 1; /* Place hero section above blobs */
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-accent);
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  color: var(--color-secondary);
+  margin-bottom: 2rem;
+}
+
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 3rem;
+  position: relative; /* Ensure content stays above blobs */
+  z-index: 1; /* Place quick links above blobs */
+}
+
+.link-card {
+  background: #1d1d1f;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.link-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.link-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-accent);
+}
+
+.link-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.link-card p {
+  font-size: 1rem;
+  color: var(--color-secondary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2rem;
   }
 
-  /* Blob Background */
-.blob-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
+  .hero-section p {
+    font-size: 1rem;
   }
-  
-  .blob {
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    background: linear-gradient(45deg, #007aff, #00c6ff);
-    opacity: 0.2;
-    filter: blur(100px);
+
+  .quick-links {
+    grid-template-columns: 1fr;
   }
+}
