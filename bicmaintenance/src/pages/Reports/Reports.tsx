@@ -100,6 +100,12 @@ const Reports: React.FC = () => {
                 <option value="Block D">Block D</option>
                 <option value="Block E">Block E</option>
                 <option value="Block F">Block F</option>
+                <option value="Fengyue 1">Fengyue 1</option>
+                <option value="Fengyue 2">Fengyue 2</option>
+                <option value="Fengyue 3">Fengyue 3</option>
+                <option value="Fengyue 4">Fengyue 4</option>
+                <option value="Sekgoma 1">Sekgoma 1</option>
+                <option value="Sekgoma 2">Sekgoma 2</option>
               </select>
             </div>
             <div className="form-group">
