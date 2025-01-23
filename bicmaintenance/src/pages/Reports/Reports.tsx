@@ -17,6 +17,7 @@ const Reports: React.FC = () => {
   });
 
   const mainBuildings = ['Old Main Boys', 'Old Main Girls', 'New Main Boys', 'New Main Girls'];
+  const buildingsWithWings = ['Old Main Boys', 'Old Main Girls', 'New Main Boys', 'New Main Girls'];
   const floors = ['Ground', 'First', 'Second'];
   const problemLocations = ['Room', 'Ablution', 'Outdoor Sink', 'Indoor Sink', 'Common Room'];
   const wings = ['North', 'South', 'East', 'West'];
@@ -167,7 +168,7 @@ const Reports: React.FC = () => {
             )}
 
             {/* Wing Selection (Conditional) */}
-            {(newReport.location === 'Ablution' || newReport.location === 'Outdoor Sink') && (
+            {(newReport.location === 'Ablution' || newReport.location === 'Outdoor Sink') && buildingsWithWings.includes(newReport.building) && (
               <div className="form-group">
                 <label>Wing</label>
                 <select
