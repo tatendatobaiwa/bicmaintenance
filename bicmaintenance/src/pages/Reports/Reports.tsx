@@ -234,6 +234,7 @@ const Reports: React.FC = () => {
                 multiple
                 onChange={handleFileUpload}
                 disabled={newReport.images.length >= 3}
+                style={{ width: '250px'}}
               />
               <div className="upload-preview">
                 {newReport.images.map((file, index) => (
